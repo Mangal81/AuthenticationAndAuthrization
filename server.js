@@ -7,13 +7,13 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
-app.use('/api/v1', routes);
 
 app.listen(PORT, (request, response) => {
 	console.log(`App is running on Port ${PORT}`);
 })
 
 
+app.use('/api/v1', routes);
 // default routes
 app.get('/',(request, response) =>{
 	response.json({
